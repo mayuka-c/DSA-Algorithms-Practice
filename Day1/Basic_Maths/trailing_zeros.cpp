@@ -17,9 +17,11 @@ int findTrailingZeros(int n) {
 }
 
 int main() {
+
     int n;
     cout <<"Enter a number: "<< endl;
     cin >> n;
+    cout << endl;
 
     int zerosCount = findTrailingZeros(n);
     cout << "Number of trailing zeros: " << zerosCount << endl;

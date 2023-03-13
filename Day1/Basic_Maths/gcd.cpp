@@ -35,6 +35,7 @@ int main() {
 
     cout << "Enter 2 numbers to find gcd" << endl;
     cin >> a >> b;
+    cout << endl;
 
     int res = gcdV2(a, b);
     cout << "Using modulo division method" << endl;

@@ -24,6 +24,7 @@ int main() {
 
     cout << "Enter 2 numbers to find LCM" << endl;
     cin >> a >> b;
+    cout << endl;
 
     int res = lcm(a, b);
     cout << "LCM(" << a << "," << b << ") = " << res << endl;
