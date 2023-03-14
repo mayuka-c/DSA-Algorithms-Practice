@@ -14,8 +14,8 @@ void printDivisors(int n) {
         if(n%i == 0) cout << i << endl;
     }
 
-    // Decrement i, before proceeding backwards
-    i--;
+    // Decrement i, before proceeding backwards for Ex- n=9
+    if(i-(n/i) == 1) i--;
 
     // backward till i reaches 1
     for(; i>=1; i--) {
