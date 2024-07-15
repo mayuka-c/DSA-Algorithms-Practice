@@ -1,18 +1,24 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-struct Node {
+struct Node
+{
     int data;
-    Node* next;
-    Node(int x) {
+    Node *next;
+    Node *prev;
+    Node(int x)
+    {
         data = x;
+        prev = NULL;
         next = NULL;
     }
 };
 
-void traversal(Node* head) {
-    Node* curr = head;
-    while(curr != NULL) {
+void traversal(Node *head)
+{
+    Node *curr = head;
+    while (curr != NULL)
+    {
         cout << curr->data << " ";
         curr = curr->next;
     }
@@ -29,6 +35,7 @@ Node* delete_begin(Node* head) {
     }
     Node* temp = head;
     head = head->next;
+    head->prev = NULL;
     delete temp;
     return head;
 }
@@ -57,19 +64,20 @@ Node* delete_end(Node* head) {
     return head;
 }
 
+
 int main() {
-    Node* head = new Node(10);
+    Node *head = new Node(10);
+
     head->next = new Node(20);
+    head->next->prev = head;
+
     head->next->next = new Node(30);
+    head->next->next->prev = head->next;
 
     traversal(head);
     cout << endl;
 
     head = delete_begin(head);
-    traversal(head);
-    cout << endl;
-
-    head = delete_end(head);
     traversal(head);
     cout << endl;
 
