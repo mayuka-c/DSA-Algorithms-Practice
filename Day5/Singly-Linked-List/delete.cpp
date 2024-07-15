@@ -22,6 +22,7 @@ Node* delete_begin(Node* head) {
     if(head == NULL) {
         return head;
     }
+
     // only 1 node
     if(head->next == NULL) {
         delete head;
